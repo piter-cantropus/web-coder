@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
+/*  Breakpoints, 500 px, 768, */
 * {
     margin: 0;
     padding: 0;
@@ -8,7 +8,7 @@
 body{
     background-color: #f5fac1;
 }
-
+/*
 header, footer{
     padding-top: 25px;
     padding-bottom: 25px;
@@ -22,11 +22,22 @@ nav ul, footer div{
     justify-content: space-evenly;
     list-style-type: none;
 }
+  */
 
-a{
-    color: red;
-    text-decoration: none;
+footer{
+    padding-top: 45px;
+    padding-bottom: 25px;
+    background-color: black;
+    
 }
+
+footer div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style-type: none;
+}
+
 
 
 h1, h2, h3{
@@ -50,7 +61,7 @@ h3{
     font-size: 30px;
 }
 
-
+/* 
 p{
     padding: 20px;
     color: black;
@@ -62,7 +73,7 @@ p{
     letter-spacing: 1px;
     word-spacing: 2px;
 }
-
+ */
 p span{
     color: red;
 }
@@ -81,4 +92,17 @@ img, iframe{
 
 .sin-borde{
     border: none;
+}
+
+@media (min-width: 500px){
+    body{
+        background-color: green;
+    }
+
+}
+
+@media (min-width: 768px){
+    body{
+        background-color: blue;
+    }
 }
