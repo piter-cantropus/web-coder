@@ -1,0 +1,11 @@
+footer{
+    padding-top: 45px;
+    padding-bottom: 25px;
+    background-color: $footer-color;
+    div {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        list-style-type: none;
+    }
+}
