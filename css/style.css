@@ -30,24 +30,28 @@ h1, h2, h3 {
 }
 
 h1 {
-  font-size: 40px;
+  font-size: 80px;
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 60px;
   text-decoration: underline;
 }
 
 h3 {
-  font-size: 25px;
+  font-size: 50px;
 }
 
+p {
+  font-size: 35px;
+}
 p span {
   color: violet;
   text-decoration: underline;
 }
 
-img, iframe {
+img,
+iframe {
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -130,10 +134,60 @@ ol {
   right: 0;
 }
 
-@media (min-width: 500px) {
-  body {
-    background-color: green;
+.contacto {
+  float: left;
+  width: 50%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+}
+
+.fila {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Nesting */
+.columna {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+.columna img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  p {
+    font-size: 30px;
   }
+  h1 {
+    font-size: 70px;
+  }
+  h2 {
+    font-size: 50px;
+    text-decoration: underline;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  .columna {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
   p {
     font-size: 25px;
   }
@@ -147,22 +201,14 @@ ol {
   h3 {
     font-size: 30px;
   }
-}
-@media (min-width: 768px) {
-  body {
-    background-color: blue;
+  .columna {
+    flex: 100%;
+    max-width: 100%;
   }
-  p {
-    font-size: 30px;
-  }
-  h1 {
-    font-size: 80px;
-  }
-  h2 {
-    font-size: 60px;
-    text-decoration: underline;
-  }
-  h3 {
-    font-size: 40px;
+  .contacto {
+    float: left;
+    width: 70%;
+    margin-bottom: 16px;
+    padding: 0px;
   }
 }/*# sourceMappingURL=style.css.map */
