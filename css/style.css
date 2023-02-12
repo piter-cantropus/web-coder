@@ -160,6 +160,7 @@ ol {
 }
 
 .card {
+  background-color: #FFFDD0;
   padding: 20px;
   text-align: center;
 }
@@ -199,9 +200,12 @@ ol {
 
 .centro {
   display: flex;
-  align-items: center;
-  padding: 0 4px;
+  padding: 4px;
+  min-width: 0;
   justify-content: center;
+}
+.centro img {
+  width: 75%;
 }
 
 @media screen and (max-width: 800px) {
