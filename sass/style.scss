@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 @import "./variables";
 @import "./footer";
-
-@mixin tiempo-transicion ($tiempo: 1s) {
-    transition: $tiempo;
-}
+@import "./calendario";
+@import "./iframe";
+@import "./boton";
 
 * {
     margin: 0;
@@ -13,10 +12,11 @@
 
 body {
     background-color: $fondo-color;
-
 }
 
-h1,h2,h3 {
+h1,
+h2,
+h3 {
     text-align: center;
     font-style: italic;
     font-weight: bold;
@@ -40,17 +40,14 @@ h3 {
 // Nesting
 p {
     font-size: 35px;
+
     span {
         color: violet;
         text-decoration: underline;
     }
 }
 
-img,
-iframe {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+img {
     border: 2px solid blue;
 }
 
@@ -64,82 +61,29 @@ ol {
     grid-template-columns: repeat(7, 1fr);
 }
 
-.dia {
-    background-color: grey;
-}
-
-.primer-dia-enero {
-    grid-column-start: 1;
-}
-
-.primer-dia-febrero {
-    grid-column-start: 4;
-}
-
-.mes {
-    text-align: center;
-    width: 300px;
-}
-
-.calendario {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.encuentro {
-    background-color: $encuentro-color;
-}
-
-.button {
-    border-radius: 4px;
-    background-color: violet;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 28px;
-    padding: 20px;
-    width: 200px;
-    // transition: all 1s;
-    cursor: pointer;
-    margin: 5px;
-    @include tiempo-transicion()
-}
-
-.button span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    @include tiempo-transicion()
-}
-
-.button span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    @include tiempo-transicion()
-}
-
-.button:hover span {
-    padding-right: 25px;
-}
-
-.button:hover span:after {
-    opacity: 1;
-    right: 0;
-}
-
 .contacto {
-    float: left;
+    float: center;
     width: 50%;
     margin-bottom: 16px;
     padding: 0 8px;
 }
 
 .card {
-    margin: 8px;
+    padding: 20px;
+    text-align: center;
+
+    p {
+        font-size: 12px;
+    }
+
+    h3 {
+        font-size: 40px;
+    }
+
+    img:hover {
+        transform: scale(1.1);
+        transition: 0.3s
+    }
 }
 
 .about-section {
@@ -158,6 +102,7 @@ ol {
     flex: 25%;
     max-width: 25%;
     padding: 0 4px;
+
     img {
         margin-top: 8px;
         vertical-align: middle;
@@ -165,23 +110,49 @@ ol {
     }
 }
 
+.centro {
+    display: flex;
+    align-items: center;
+    padding: 0 4px;
+    justify-content: center;
+}
+
+
 @media screen and (max-width: 800px) {
     p {
         font-size: 30px;
     }
+
     h1 {
         font-size: 70px;
     }
+
     h2 {
         font-size: 50px;
         text-decoration: underline;
     }
+
     h3 {
         font-size: 30px;
     }
+
     .columna {
         flex: 50%;
         max-width: 50%;
+    }
+
+    .card {
+        padding: 20px;
+        margin-bottom: 5px;
+        text-align: center;
+
+        p {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 40px;
+        }
     }
 }
 
@@ -189,24 +160,43 @@ ol {
     p {
         font-size: 25px;
     }
+
     h1 {
         font-size: 60px;
     }
+
     h2 {
         font-size: 40px;
         text-decoration: underline;
     }
+
     h3 {
         font-size: 30px;
     }
+
     .columna {
         flex: 100%;
         max-width: 100%;
     }
+
     .contacto {
-        float: left;
+        float: center;
         width: 70%;
         margin-bottom: 16px;
         padding: 0px;
+    }
+
+    .card {
+        padding: 20px;
+        margin-bottom: 5px;
+        text-align: center;
+
+        p {
+            font-size: 30px;
+        }
+
+        h3 {
+            font-size: 50px;
+        }
     }
 }

@@ -1,0 +1,42 @@
+@mixin tiempo-transicion ($tiempo: 1s) {
+    transition: $tiempo;
+}
+
+.button {
+    border-radius: 4px;
+    background-color: #5a918a;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    padding: 20px;
+    width: 150px;
+    // transition: all 1s;
+    cursor: pointer;
+    margin: 5px;
+    @include tiempo-transicion();
+        span {
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+            @include tiempo-transicion()
+        }
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    @include tiempo-transicion()
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
